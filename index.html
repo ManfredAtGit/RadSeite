@@ -193,10 +193,20 @@
   </div>
 
   <!-- Add Google Maps -->
-  <div id="googleMap"></div>
+  <div id="home-tiles" class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <a href="https://www.google.de/maps/place/44141+Dortmund/@51.5038862,7.4784735,14z/data=!3m1!4b1!4m5!3m4!1s0x47b91716bdda0d51:0x1c27f2849ae5d1d0!8m2!3d51.5043716!4d7.5015064" target="_blank">
+        <div id="map-tile">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19868.0680725299!2d7.478473490013618!3d51.50388619659863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b91716bdda0d51%3A0x1c27f2849ae5d1d0!2s44141+Dortmund!5e0!3m2!1sde!2sde!4v1470825269721" width="600100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <span>map</span>
+        </div>
+      </a>
+    </div>
+  </div>
   <br>
 
-  <!-- 51.5078011,7.3301805, -->
+  <!-- 
+  <div id="googleMap"></div>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script>
   var myCenter = new google.maps.LatLng(51.506826,7.490658);
@@ -221,6 +231,7 @@
 
   google.maps.event.addDomListener(window, 'load', initialize);
   </script>
+  -->
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery-3.1.0.min.js"></script>
