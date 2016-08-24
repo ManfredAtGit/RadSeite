@@ -9,6 +9,7 @@ $(document).ready(function() {
                 'maxWidth': $(window).width() - 100,
                 'maxHeight': $(window).height() - 100
             };
+        src="images/g-01.jpg";
       console.log("lb on click img: "+ $img);
       console.log("lb on click src: "+ src);
       console.log("lb on click alt: " + alt);

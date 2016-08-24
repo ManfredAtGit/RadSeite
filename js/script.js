@@ -36,7 +36,7 @@ $(function () {
   var tourHtml = "snippets/tour-snippet.html";
   var downloadHtml = "snippets/download-snippet.html";
   var galleryHtml = "snippets/gallery-snippet.html";  
-  var extrasHtml = "snippets/test-snippet.html";
+  var extrasHtml = "snippets/extras-snippet.html";
   var t2Html = "snippets/t2-snippet.html";
 
 
@@ -134,18 +134,24 @@ $(function () {
     $('[data-target="#lightbox"]').on('click', function(event) {
         var $img = $(this).find('img'), 
             src = $img.attr('src'),
+            src1 ="",
             alt = $img.attr('alt'),
             css = {
                 'maxWidth': $(window).width() - 100,
                 'maxHeight': $(window).height() - 100
             };
+
+
       console.log("lb on click img: "+ $img.get(0).outerHTML);
       console.log('lb on click src: '+ src);
       console.log("lb on click alt: " + alt);
       console.log("lb on click css: " + JSON.stringify(css));
-    
+
+      src1 = src.replace("-xs.jpg",".jpg");
+      console.log('lb on click src1: '+ src1);
+
         $lightbox.find('.close').addClass('hidden');
-        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('src', src1);
         $lightbox.find('img').attr('alt', alt);
         $lightbox.find('img').css(css);
       
@@ -182,6 +188,26 @@ $(function () {
     );
   };
 
+
+  // provide global function to set event-handler for lightbox
+  dc.lbT2 = function () {
+    
+    // Fill modal with content from link href
+    $("#lightbox").on("show.bs.modal", function(e) {
+        var link = $(e.relatedTarget);
+        console.log("from within modal load link html: " + link.get(0).outerHTML );
+        console.log("from within modal load link html href: " + link.attr("href") );
+        console.log("from within modal load: " + $(this).find(".modal-body").load(link.attr("href")).get(0).outerHTML );
+        $(this).find(".modal-body").load(link.attr("href"));
+        console.log("from within modal load: " + $(this).find(".modal-body").load(link.attr("href")).get(0).outerHTML );
+    });
+    
+  };
+
+
+
+
+
   // Load the t2 view
   dc.loadT2 = function () {
     console.log("loadT2: loading test view t2");
@@ -192,7 +218,8 @@ $(function () {
         document.querySelector("#main-content")
           .innerHTML = responseText;
         console.log("greeting from within loadT2 callback" + responseText);
-        dc.lbEventHandler();
+        dc.lbT2(); 
+        // dc.lbEventHandler();
       },
       false
     );
