@@ -22,10 +22,6 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 */
 
-$(function () {
-  console.log("from index-script: ready!")
-});
-
 /*  main content noch aus einzelenen pages in snippets/views heraustrennen */
 (function (global) {
 
@@ -37,8 +33,6 @@ $(function () {
   var downloadHtml = "snippets/download-snippet.html";
   var galleryHtml = "snippets/gallery-snippet.html";  
   var extrasHtml = "snippets/test-snippet.html";
-  var t2Html = "snippets/t2-snippet.html";
-
 
   // Convenience function for inserting innerHTML for 'select'
   var insertHtml = function (selector, html) {
@@ -57,7 +51,6 @@ $(function () {
   document.addEventListener("DOMContentLoaded", function (event) {
 
     // On first load, show home view
-    console.log("DOMContentLoaded - now loading home view");
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       homeHtml,
@@ -71,7 +64,6 @@ $(function () {
 
   // Load the bikes view
   dc.loadBikes = function () {
-    console.log("loadBikes: loading bikes view");
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       bikesHtml,
@@ -122,77 +114,14 @@ $(function () {
     );
   };
 
-
-  
-  // provide global function to set event-handler for lightbox
-  dc.lbEventHandler = function () {
-    
-    var $lightbox = $('#lightbox');
-
-    console.log("greetings from within create event handlers on lightbox " + $lightbox.get(0).outerHTML);
-    
-    $('[data-target="#lightbox"]').on('click', function(event) {
-        var $img = $(this).find('img'), 
-            src = $img.attr('src'),
-            alt = $img.attr('alt'),
-            css = {
-                'maxWidth': $(window).width() - 100,
-                'maxHeight': $(window).height() - 100
-            };
-      console.log("lb on click img: "+ $img.get(0).outerHTML);
-      console.log('lb on click src: '+ src);
-      console.log("lb on click alt: " + alt);
-      console.log("lb on click css: " + JSON.stringify(css));
-    
-        $lightbox.find('.close').addClass('hidden');
-        $lightbox.find('img').attr('src', src);
-        $lightbox.find('img').attr('alt', alt);
-        $lightbox.find('img').css(css);
-      
-      console.log("lb on click lb at end: " + $lightbox.get(0).outerHTML);
-      
-    });
-    
-    $lightbox.on('shown.bs.modal', function (e) {
-        var $img = $lightbox.find('img');
-      
-      console.log("lb on show-modal img: " + $img.get(0).outerHTML);
-            
-        $lightbox.find('.modal-dialog').css({'width': $img.width()});
-        $lightbox.find('.close').removeClass('hidden');
-    });
-    
-   
-    
-  };
-  
   // Load the test view
   dc.loadExtras = function () {
-    console.log("loadExtras: loading test view");
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       extrasHtml,
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;
-        console.log("greeting from within loadExtras callback");
-        dc.lbEventHandler();
-      },
-      false
-    );
-  };
-
-  // Load the t2 view
-  dc.loadT2 = function () {
-    console.log("loadT2: loading test view t2");
-    showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(
-      t2Html,
-      function (responseText) {
-        document.querySelector("#main-content")
-          .innerHTML = responseText;
-        console.log("greeting from within loadT2 callback" + responseText);
-        dc.lbEventHandler();
       },
       false
     );
