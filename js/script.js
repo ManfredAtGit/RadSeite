@@ -117,6 +117,7 @@ $(function () {
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;
+        dc.lbEventHandler();
       },
       false
     );
