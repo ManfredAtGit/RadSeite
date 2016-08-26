@@ -2,6 +2,7 @@
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777;
   }
+
   h3, h4 {
       margin: 10px 0 30px 0;
       letter-spacing: 10px;      
@@ -32,11 +33,7 @@
   .carousel-caption h3 {
       color: #fff !important;
   }
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-  }
+
   .bg-1 {
       background: #2d2d30;
       color: #bdbdbd;
@@ -198,3 +195,15 @@
   }
 
   /* END of Lightbox specials */
+
+  /* media queries for different screen sizes */
+
+    @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+
+    body {
+      font: 400 10px/1.2 Lato, sans-serif;
+    }
+  }
