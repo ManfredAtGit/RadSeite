@@ -197,8 +197,27 @@
   /* END of Lightbox specials */
 
   /* media queries for different screen sizes */
+  @media (max-width: 1200px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
 
-    @media (max-width: 600px) {
+    body {
+      font: 400 14px/1.6 Lato, sans-serif;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+
+    body {
+      font: 400 12px/1.4 Lato, sans-serif;
+    }
+  }
+
+  @media (max-width: 768px) {
     .carousel-caption {
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
