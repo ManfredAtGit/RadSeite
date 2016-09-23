@@ -22,6 +22,28 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 */
 
+// global var for storing choosen language
+$lang = "de";
+
+$(document).ready(function(){
+
+
+  // Toggle language selection icon
+  $("#ge_flag").toggle();
+  $("#ge_flag").click(function() {
+     $("#en_flag").toggle();
+     $("#ge_flag").toggle();
+     $lang="de";
+  });
+
+  $("#en_flag").click(function() {
+     $("#ge_flag").toggle();
+     $("#en_flag").toggle();
+     $lang ="en";
+  });
+
+});
+
 $(function () {
   console.log("from index-script: ready!")
 });
@@ -39,6 +61,14 @@ $(function () {
   var extrasHtml = "snippets/extras-snippet.html";
   var t2Html = "snippets/t2-snippet.html";
 
+  // Convenience function to define language specific page-url
+  var adrLang = function (adr) {
+    if ($lang=="en") {
+      adr= adr.replace(".html","-en.html");
+    }
+    return adr;
+
+  };
 
   // Convenience function for inserting innerHTML for 'select'
   var insertHtml = function (selector, html) {
@@ -60,7 +90,7 @@ $(function () {
     console.log("DOMContentLoaded - now loading home view");
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      homeHtml,
+      adrLang(homeHtml),
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;
@@ -74,7 +104,7 @@ $(function () {
     console.log("loadBikes: loading bikes view");
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      bikesHtml,
+      adrLang(bikesHtml),
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;
