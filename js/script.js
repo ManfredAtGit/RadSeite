@@ -99,6 +99,20 @@ $(function () {
     );
   });
 
+  // Load home view
+  dc.loadHome = function () {
+    console.log("loadHome: loading home view");
+    showLoading("#main-content");
+    $ajaxUtils.sendGetRequest(
+      adrLang(homeHtml),
+      function (responseText) {
+        document.querySelector("#main-content")
+          .innerHTML = responseText;
+      },
+      false
+    );
+  };
+
   // Load the bikes view
   dc.loadBikes = function () {
     console.log("loadBikes: loading bikes view");
