@@ -34,12 +34,14 @@ $(document).ready(function(){
      $("#en_flag").toggle();
      $("#ge_flag").toggle();
      $lang="de";
+     $dc.loadHome();
   });
 
   $("#en_flag").click(function() {
      $("#ge_flag").toggle();
      $("#en_flag").toggle();
      $lang ="en";
+     $dc.loadHome();
   });
 
 });
@@ -234,6 +236,7 @@ $(function () {
   };
 
 
+  // only neede for test with dc.loadT2, can be deleted
   // provide global function to set event-handler for lightbox
   dc.lbT2 = function () {
     
@@ -249,11 +252,9 @@ $(function () {
     
   };
 
-
-
-
-
+  // only neede for test, can be deleted
   // Load the t2 view
+  // test: image is rendered as text code ???
   dc.loadT2 = function () {
     console.log("loadT2: loading test view t2");
     showLoading("#main-content");
