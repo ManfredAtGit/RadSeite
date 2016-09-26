@@ -133,7 +133,7 @@ $(function () {
   dc.loadTour = function () {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      tourHtml,
+      adrLang(tourHtml),
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;
