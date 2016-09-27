@@ -1,13 +1,13 @@
   body {
       font: 400 15px/1.8 Lato, sans-serif;
-      color: #777;
+      color: #777; /* middle grey 47% */
   }
 
   h3, h4 {
       margin: 10px 0 30px 0;
       letter-spacing: 10px;      
       font-size: 20px;
-      color: #111;
+      color: #111;  /* dark black 7% */
   }
   .container {
       padding: 80px 120px;
@@ -31,12 +31,12 @@
       margin: auto;
   }
   .carousel-caption h3 {
-      color: #fff !important;
+      color: #fff !important; /* white 100%  */
   }
 
   .bg-1 {
-      background: #2d2d30;
-      color: #bdbdbd;
+      background: #2d2d30;  /* dark grey 18% */
+      color: #bdbdbd; /* light grey  74% */
   }
   .bg-1 h3 {color: #fff;}
   .bg-1 p {font-style: italic;}
@@ -55,23 +55,23 @@
   }
   .thumbnail p {
       margin-top: 15px;
-      color: #555;
+      color: #555; /* (dark) grey 33% */
   }
   .btn {
       padding: 10px 20px;
-      background-color: #333;
-      color: #f1f1f1;
+      background-color: #333; /* (dark) grey 20% */
+      color: #f1f1f1;  /* light grey 95% */
       border-radius: 0;
       transition: .2s;
   }
   .btn:hover, .btn:focus {
-      border: 1px solid #333;
-      background-color: #fff;
-      color: #000;
+      border: 1px solid #333; /* (dark) grey 20% */
+      background-color: #fff; /* white 100%  */
+      color: #000; /* black */
   }
   .modal-header, h4, .close {
-      background-color: #333;
-      color: #fff !important;
+      background-color: #333; /* (dark) grey 20% */
+      color: #fff !important; /* white 100%  */
       text-align: center;
       font-size: 30px;
   }
@@ -81,7 +81,7 @@
   }
   */
   .nav-tabs li a {
-      color: #777;
+      color: #777; /* middle grey 47% */
   }
   /*
   #googleMap {
@@ -94,21 +94,21 @@
   .navbar {
       font-family: Montserrat, sans-serif;
       margin-bottom: 0;
-      background-color: #2d2d30;
+      background-color: #2d2d30;  /* dark grey 18% */
       border: 0;
       font-size: 11px !important;
       letter-spacing: 4px;
       opacity: 0.9;
   }
   .navbar li a, .navbar .navbar-brand { 
-      color: #d5d5d5 !important;
+      color: #d5d5d5 !important;  /* light grey 84% */
   }
   .navbar-nav li a:hover {
       color: #fff !important;
   }
   .navbar-nav li.active a {
       color: #fff !important;
-      background-color: #29292c !important;
+      background-color: #29292c !important;  /* dark grey 17% */
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
@@ -182,8 +182,8 @@
 
   #lightbox .close {
       opacity: 1;
-      color: rgb(255, 255, 255);
-      background-color: rgb(25, 25, 25);
+      color: rgb(255, 255, 255); /* white */
+      background-color: rgb(25, 25, 25);  /* almost black */
       padding: 5px 8px;
       border-radius: 30px;
       border: 2px solid rgb(255, 255, 255);
@@ -224,5 +224,11 @@
 
     body {
       font: 400 10px/1.2 Lato, sans-serif;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .panel-title, h4 {
+      font-size: 12px;
     }
   }
