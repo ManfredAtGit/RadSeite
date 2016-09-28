@@ -153,7 +153,10 @@ $(function () {
   };
 
   // Load the gallery view
-  dc.loadGallery = function () {
+  dc.loadGallery = function (pId) {
+    if (pId === undefined) {
+      pId = "rar";
+    };
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       galleryHtml,
@@ -161,10 +164,30 @@ $(function () {
         document.querySelector("#main-content")
           .innerHTML = responseText;
         dc.lbEventHandler();
+        dc.setActivePanel(pId);
       },
       false
     );
   };
+
+  // function to open specific paneltab in gallery  panelgroup
+  dc.setActivePanel = function(pId) {
+    if (pId === undefined) {
+      pId = "rar";
+    };
+    var $target = $('#accordion').find
+    $('.panel-collapse.in').collapse('hide');
+    //$('panel-collapse:not(".in")').collapse('show');
+    $("#"+pId).collapse('show');
+
+  };
+
+  // helper function for setting the active tab attribute aof panel-tab
+  changeInStatus = function(inId) {
+    $('.panel-collapse.in').collapse('hide');
+    $('#pId').collapse('show');
+
+  }
 
 
   
