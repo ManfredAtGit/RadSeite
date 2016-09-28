@@ -1,3 +1,7 @@
+  * {
+      box-sizing: border-box;
+  }
+
   body {
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777; /* middle grey 47% */
@@ -12,6 +16,7 @@
   .container {
       padding: 80px 120px;
   }
+
   /*
   .person {
       border: 10px solid transparent;
@@ -113,6 +118,14 @@
   .navbar-default .navbar-toggle {
       border-color: transparent;
   }
+
+  .navbar-header button.navbar-toggle {
+      clear: both;
+  }
+
+  .panel-title a:hover, .panel-title a:focus {
+      text-decoration: none;
+  }
   .open .dropdown-toggle {
       color: #fff;
       background-color: #555 !important;
@@ -198,37 +211,36 @@
 
   /* media queries for different screen sizes */
   @media (max-width: 1200px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-
     body {
       font: 400 14px/1.6 Lato, sans-serif;
     }
   }
 
   @media (max-width: 992px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-
     body {
       font: 400 12px/1.4 Lato, sans-serif;
     }
   }
 
   @media (max-width: 768px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-
     body {
       font: 400 10px/1.2 Lato, sans-serif;
     }
+    .container {
+      padding: 120px 10px 40px 10px;
+    }
+  }
+
   }
 
   @media (max-width: 480px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
     .panel-title, h4 {
       font-size: 12px;
+    }
+    .container {
+      padding: 120px 10px 40px 10px;
     }
   }
