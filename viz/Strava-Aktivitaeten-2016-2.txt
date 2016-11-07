@@ -1,0 +1,94 @@
+Monat,name,group,DistKat,HM,Watt,Meter,Minuten,avg,Datum
+Oktober,Nachmittagsradfahrt,Training,0-50,177,88,41500,111,22.43243243, 20.10.2016
+Oktober,Nachmittagsradfahrt,Training,0-50,208,83,34700,96,21.6875, 17.10.2016
+Oktober,RTF-Haltern,RTF,100-150,415,123,122000,263,27.83269962, 16.10.2016
+Oktober,Nachmittagsradfahrt,Training,0-50,77,104,46800,115,24.4173913, 13.10.2016
+Oktober,Morgenradfahrt,Training,50-100,242,141,74800,155,28.95483871, 9.10.2016
+Oktober,Nachmittagsradfahrt,Training,0-50,38,81,45500,118,23.13559322, 6.10.2016
+Oktober,Nachmittagsradfahrt,Training,0-50,38,109,43800,100,26.28, 4.10.2016
+Oktober,Ara Niederrhein-Absc,Brevet,100-150,152,77,104400,276,22.69565217, 2.10.2016
+September,Nachmittagsradfahrt,Training,0-50,141,129,48700,106,27.56603774, 29.9.2016
+September,Nachmittagsradfahrt,Training,0-50,42,101,48700,117,24.97435897, 27.9.2016
+September,Kettwiger-Hügeltour,RTF,100-150,1647,151,107500,263,24.52471483, 25.9.2016
+September,Nachmittagsradfahrt,Training,0-50,39,123,40900,90,27.26666667, 23.9.2016
+September,Nachmittagsradfahrt,Training,0-50,39,112,44000,99,26.66666667, 21.9.2016
+September,Abendradfahrt,Training,0-50,91,127,34200,75,27.36, 20.9.2016
+September,RTF Waltrop,RTF,100-150,338,129,113600,240,28.4, 18.9.2016
+September,Ein Pfänder geht imm,Ride,0-50,675,153,25500,86,17.79069767, 15.9.2016
+September,PfänderRunden,Ride,50-100,2504,150,71700,278,15.47482014, 14.9.2016
+September,Bödele+,Ride,100-150,2281,131,102100,323,18.96594427, 12.9.2016
+September,Garmisch-Mittenwald-,Ride,50-100,1368,137,77600,214,21.75700935, 9.9.2016
+September,Plansee,Ride,50-100,948,163,81800,187,26.2459893,7.9.2016
+September,Gap-Runde: überallBe,Ride,50-100,1145,168,95900,217,26.51612903, 4.9.2016
+September,Nachmittagsradfahrt,Training,0-50,122,112,45400,100,27.24, 1.9.2016
+August,Nachmittagsradfahrt,Training,50-100,37,96,53100,128,24.890625, 30.8.2016
+August,RTF-Sturmvogel Dortm,RTF,100-150,961,126,108000,252,25.71428571, 28.8.2016
+August,Nachmittagsradfahrt,Training,50-100,351,98,61800,162,22.88888889, 17.8.2016
+August,Hagen-Süd,Ride,150-200,2377,140,158000,426,22.25352113, 13.8.2016
+August,Nachmittagsradfahrt,Training,0-50,38,99,47100,112,25.23214286, 10.8.2016
+August,RTF Neuenrade,RTF,100-150,2133,154,148100,360,24.68333333, 7.8.2016
+August,Nachmittagsradfahrt,Training,0-50,38,101,40700,98,24.91836735, 4.8.2016
+Juli,RaR - aufgegeben :-(,Event,200+,3954,133,213700,629,20.38473768, 30.7.2016
+Juli,RTF-Silschede-Stern,RTF,150-200,2241,125,195900,506,23.22924901, 16.7.2016
+Juli,Nachmittagsradfahrt,Training,0-50,39,118,42400,94,27.06382979, 14.7.2016
+Juli,Hochsauerland RTF,RTF,150-200,2332,163,152100,361,25.27977839, 9.7.2016
+Juli,Nachmittagsradfahrt,Training,50-100,37,91,60600,147,24.73469388, 4.7.2016
+Juli,Wixberg,Ride,50-100,1574,145,96200,252,22.9047619, 3.7.2016
+Juni,Phönix-Runden,Training,50-100,50,100,65000,140,27.85714286, 28.6.2016
+Juni,Westfalentriathlon-S,Event,0-50,126,104,37600,97,23.25773196, 26.6.2016
+Juni,Nachmittagsradfahrt,Training,50-100,80,92,56700,146,23.30136986, 23.6.2016
+Juni,Wixberg,Ride,50-100,1150,152,77900,195,23.96923077, 21.6.2016
+Juni,SchauInsLand,Ride,0-50,1798,185,49000,155,18.96774194, 19.6.2016
+Juni,Wixberg mit Björn,Ride,100-150,1845,134,141500,362,23.45303867, 12.6.2016
+Juni,Nachmittagsradfahrt,Training,50-100,44,111,53400,120,26.7, 8.6.2016
+Juni,RTF-Witten,RTF,150-200,1656,153,169500,376,27.04787234, 5.6.2016
+Mai,Nachmittagsradfahrt,Training,0-50,91,112,45200,104,26.07692308, 31.5.2016
+Mai,Haarstrang-RTF-mitAn,RTF,100-150,1068,138,126200,278,27.23741007, 29.5.2016
+Mai,Mittagsradfahrt,Training,0-50,97,105,49600,128,23.25, 27.5.2016
+Mai,MorgenradfahrtMitAnd,Training,50-100,39,131,50400,105,28.8, 26.5.2016
+Mai,Wixberg,Ride,50-100,1497,130,90300,253,21.41501976, 22.5.2016
+Mai,Heidelberg-Königstuh,Ride,50-100,602,101,66300,245,16.23673469, 20.5.2016
+Mai,Speyer-Heidelberg-Kö,Ride,50-100,566,138,70000,204,20.58823529, 18.5.2016
+Mai,HambacherSchloß-Kalm,Ride,50-100,883,116,54100,163,19.91411043, 17.5.2016
+Mai,Mittagsradfahrt,Training,0-50,328,102,32600,87,22.48275862, 14.5.2016
+Mai,Nachmittagsradfahrt,Training,50-100,610,112,57500,150,23, 12.5.2016
+Mai,Nachmittagsradfahrt,Training,0-50,74,89,46400,117,23.79487179, 10.5.2016
+Mai,Wiblingwerde-Wixberg,Ride,100-150,1478,119,100500,286,21.08391608, 8.5.2016
+Mai,RTF-Witten-Himmelfah,RTF,100-150,513,127,115100,250,27.624, 5.5.2016
+Mai,Nachmittagsradfahrt,Training,0-50,38,79,46200,123,22.53658537, 2.5.2016
+Mai,RTF-FlachUmDortmund,RTF,100-150,404,114,129600,292,26.63013699, 1.5.2016
+April,Morgenradfahrt,Training,0-50,364,100,48700,126,23.19047619, 29.4.2016
+April,Nachmittagsradfahrt,Training,50-100,295,94,50900,128,23.859375, 28.4.2016
+April,Morgenradfahrt,Training,0-50,49,96,43300,110,23.61818182, 24.4.2016
+April,Morgenradfahrt,Training,50-100,43,94,51100,137,22.37956204, 23.4.2016
+April,Nachmittagsradfahrt,Training,0-50,73,112,46200,106,26.1509434, 21.4.2016
+April,Nachmittagsradfahrt,Training,0-50,77,108,43600,102,25.64705882, 20.4.2016
+April,ARA-Niederrhein-200,Brevet,200+,446,112,212300,482,26.42738589, 16.4.2016
+April,Nachmittagsradfahrt,Training,0-50,202,128,47900,103,27.90291262, 14.4.2016
+April,Nachmittagsradfahrt,Training,0-50,12,101,20400,50,24.48, 11.4.2016
+April,Ara-Wuppertal-200,Brevet,200+,3518,137,210300,576,21.90625, 9.4.2016
+April,Nachmittagsradfahrt,Training,0-50,216,101,41100,106,23.26415094, 7.4.2016
+April,RTF-Capelle,RTF,100-150,146,144,114100,230,29.76521739, 3.4.2016
+April,Nachmittagsradfahrt,Training,50-100,76,108,58300,133,26.30075188, 1.4.2016
+Maerz,Morgenradfahrt,Training,0-50,504,93,43900,133,19.80451128, 28.3.2016
+Maerz,Hagener-Hügeltour,Ride,100-150,2797,126,138000,440,18.81818182, 26.3.2016
+Maerz,Mittagsradfahrt,Training,50-100,324,105,55600,131,25.46564885, 22.3.2016
+Maerz,Herne-RTF,RTF,100-150,380,128,108600,235,27.72765957, 20.3.2016
+Maerz,Nachmittagsradfahrt,Training,0-50,39,134,47500,99,28.78787879, 17.3.2016
+Maerz,Nachmittagsradfahrt,Training,50-100,158,83,58300,153,22.8627451, 15.3.2016
+Maerz,Sorpe,Ride,100-150,1552,100,145300,401,21.74064838, 13.3.2016
+Maerz,Nachmittagsradfahrt,Training,0-50,38,77,43700,118,22.22033898, 10.3.2016
+Maerz,Nachmittagsradfahrt,Training,0-50,35,87,35200,85,24.84705882, 9.3.2016
+Maerz,Wixberg,Ride,100-150,1892,129,110000,312,21.15384615, 6.3.2016
+Maerz,Nachmittagsradfahrt,Training,0-50,38,93,31800,80,23.85, 2.3.2016
+Februar,Nachmittagsradfahrt,Training,0-50,39,83,43800,112,23.46428571, 29.2.2016
+Februar,Möhnesee,Ride,150-200,1309,83,174600,491,21.33604888, 27.2.2016
+Januar,Nachmittagsradfahrt,Training,50-100,445,140,54300,149,21.86577181, 25.1.2016
+Januar,Nachmittagsradfahrt,Training,0-50,58,132,47800,124,23.12903226, 14.1.2016
+Januar,Nachmittagsradfahrt,Training,50-100,314,133,53900,142,22.77464789, 12.1.2016
+Januar,Mittagsradfahrt,Training,0-50,356,102,41400,144,17.25, 10.1.2016
+Januar,Mittagsradfahrt,Training,50-100,1111,163,88700,243,21.90123457, 9.1.2016
+Januar,Nachmittagsradfahrt,Training,50-100,721,134,65200,192,20.375, 8.1.2016
+Januar,Nachmittagsradfahrt,Training,50-100,37,136,61100,155,23.6516129, 5.1.2016
+Januar,Nachmittagsradfahrt,Training,50-100,582,151,56100,150,22.44, 3.1.2016
+Januar,Nachmittagsradfahrt,Training,50-100,190,135,50000,135,22.22222222, 1.1.2016

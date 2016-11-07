@@ -1,0 +1,207 @@
+
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+  return window.requestAnimationFrame       ||
+         window.webkitRequestAnimationFrame ||
+         window.mozRequestAnimationFrame    ||
+         window.oRequestAnimationFrame      ||
+         window.msRequestAnimationFrame     ||
+         function( callback ){
+           window.setTimeout(callback, 1000 / 60);
+         };
+})();
+
+// testFilter
+var filterValue = "alle";
+
+var m = [30, 10, 10, 10],
+    w = 1260 - m[1] - m[3],
+    h = 340 - m[0] - m[2];
+
+var x = d3.scale.ordinal().rangePoints([0, w], 1),
+    y = {};
+
+var line = d3.svg.line(),
+    axis = d3.svg.axis().orient("left"),
+    foreground,
+    dimensions,
+    brush_count = 0;
+
+var colors = {
+  "Event": "red",
+  "Ride": "green",
+  "Brevet": "yellow",
+  "RTF": "magenta",
+  "Training": "brown",
+  "Soups, Sauces, and Gravies": "hsla(110.11764705882352,57.04697986577182%,70.7843137254902%,0.12)",
+  "Vegetables and Vegetable Products": "hsla(120,56.86274509803921%,40%,0.12)",
+  "Sausages and Luncheon Meats": "hsla(1.1428571428571388,100%,79.41176470588236%,0.12)",
+  "Breakfast Cereals": "hsla(271.3953488372093,39.44954128440367%,57.25490196078431%,0.12)",
+  "Fruits and Fruit Juices": "hsla(274.05405405405406,30.57851239669423%,76.27450980392156%,0.12)",
+  "Nut and Seed Products": "hsla(10.153846153846157,30.23255813953488%,42.156862745098046%,0.12)",
+  "Beverages": "hsla(10,28.915662650602407%,67.45098039215686%,0.12)",
+  "Finfish and Shellfish Products": "hsla(318.3333333333333,65.85365853658534%,67.84313725490196%,0.12)",
+  "Legumes and Legume Products": "hsla(334.15384615384613,80.24691358024694%,84.11764705882354%,0.12)",
+  "Baked Products": "hsla(0,0%,49.80392156862745%,0.12)",
+  "Sweets": "hsla(0,0%,78.03921568627452%,0.12)",
+  "Cereal Grains and Pasta": "hsla(0,0%,0%,0.12)",
+  "Fast Foods": "hsla(60,51.99999999999999%,70.58823529411764%,0.12)",
+  "Meals, Entrees, and Sidedishes": "hsla(185.54347826086956,80%,45.09803921568628%,0.12)",
+  "Snacks": "hsla(189.29577464788733,57.72357723577235%,75.88235294117646%,0.12)",
+  "ohne": "blue",
+  "alle": "blue"
+};
+
+d3.selectAll("canvas")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+    .style("padding", m.join("px ") + "px");
+
+foreground = document.getElementById('foreground').getContext('2d');
+
+foreground.strokeStyle = "rgba(0,100,160,0.1)";
+
+var svg = d3.select("svg")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+  .append("svg:g")
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+// ml: 
+//var output = d3.select("body").append("pre");
+var output = d3.select("#chart")
+		.append("g")
+	    //.attr("transform", "translate(" + 0 + "," + 340 + ")")
+		.append("pre");
+
+// Could value belong to a quantitative ordinal scale
+var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
+
+//d3.csv("nutrients.csv", function(data) {
+//d3.csv("./PC-assets/vsa2.csv", function(data) {
+d3.csv("../resources/Strava-Aktivitäten-2016-2.txt", function(data) {
+  //Reduce the number of unique names... their were > 7K.
+  //data.forEach(function(d){d["name"] = d["name"].slice(0,1);});
+
+  // Extract the list of dimensions.
+  dimensions = d3.keys(data[0]).slice(1).concat(d3.keys(data[0]).slice(0,1)); //Put the ordinal dimensions on opposite sides of the chart for easier viewing
+  x.domain(dimensions);
+
+  // Create a scale for each.
+  dimensions.forEach(function(d) {
+    var vals = data.map(function(p) {return p[d];}); 
+    if (vals.every(quant_p)){ 
+      y[d] = d3.scale.linear()
+          .domain(d3.extent(vals.map(function(p){return +p})))
+          .range([h, 0]);}
+    else{           
+      y[d] = d3.scale.ordinal()
+          .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}))
+          .rangePoints([h, 0],1);}
+  })
+  // Render full foreground
+  paths(data, foreground, brush_count);
+
+  // Add a group element for each dimension.
+  var g = svg.selectAll(".dimension")
+      .data(dimensions)
+    .enter().append("svg:g")
+      .attr("class", "dimension")
+      .attr("transform", function(d) { return "translate(" + x(d) + ")"; });
+
+  // Add an axis and title.
+  g.append("svg:g")
+      .attr("class", "axis")
+      .each(function(d) { d3.select(this).call(axis.scale(y[d])); })
+    .append("svg:text")
+      .attr("text-anchor", "middle")
+      .attr("y", -9)
+      .text(String);
+
+  // Add and store a brush for each axis.
+  g.append("svg:g")
+      .attr("class", "brush")
+      .each(function(d) { d3.select(this).call(y[d].brush = d3.svg.brush().y(y[d]).on("brush", brush)); })
+    .selectAll("rect")
+      .attr("x", -12)
+      .attr("width", 24);
+
+  // ml: 
+  output.text(d3.tsv.format(data));
+
+  // Handles a brush event, toggling the display of foreground lines.
+  function brush() {
+    brush_count++;
+    var actives = dimensions.filter(function(p) { return !y[p].brush.empty(); }),
+        extents = actives.map(function(p) { return y[p].brush.extent(); });
+
+    // Get lines within extents
+    var selected = [];
+    data
+	.filter(function (r) { return filterValue==="alle" || r.group===filterValue;})
+	.map(function(d) {
+      return actives.every(function(p, i) {
+        var p_new = (y[p].ticks)?d[p]:y[p](d[p]); //convert to pixel range if ordinal
+          return extents[i][0] <= p_new && p_new <= extents[i][1];
+      }) ? selected.push(d) : null;
+    });
+
+    // Render selected lines
+    foreground.clearRect(0,0,w+1,h+1);
+    paths(selected, foreground, brush_count);
+	// ml: 
+	output.text(d3.tsv.format(selected));
+  }
+
+  function paths(data, ctx, count) {
+    var n = data.length,
+        i = 0,
+        reset = false;
+    function render() {
+      var max = d3.min([i+60, n]);
+      data.slice(i,max).forEach(function(d) {
+        path(d, foreground, colors[d.group]);
+      });
+      i = max;
+    };
+    (function animloop(){
+      if (i >= n || count < brush_count) return;
+      requestAnimFrame(animloop);
+      render();
+    })();
+  };
+  
+  function filterTest(value) {
+	// set global filterVar
+	filterValue = value;
+	brush();
+  };
+  
+  d3.select("#filterTest").on("change", function() {
+	console.log("filterTest change event handler " + this.value);
+	clearTimeout(timeout);
+	filterTest(this.value);
+	});
+  
+  var timeout = setTimeout(function() {
+	//order("rgroup");
+	//d3.select("#order").property("selectedIndex", 0).node().focus();
+	d3.select("#filterTest").property("selectedIndex", 0).node().focus();
+	}, 3000);
+  
+});
+
+
+function path(d, ctx, color) {
+  if (color) ctx.strokeStyle = color;
+  ctx.beginPath();
+  dimensions.map(function(p,i) {
+    if (i == 0) {
+      ctx.moveTo(x(p),y[p](d[p]));
+    } else { 
+      ctx.lineTo(x(p),y[p](d[p]));
+    }
+  });
+  ctx.stroke();
+};
+

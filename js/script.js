@@ -56,7 +56,8 @@ $(function () {
   var bikesHtml = "snippets/bikes-snippet.html";
   var tourHtml = "snippets/tour-snippet.html";
   var downloadHtml = "snippets/download-snippet.html";
-  var galleryHtml = "snippets/gallery-snippet.html";  
+  var galleryHtml = "snippets/gallery-snippet.html"; 
+  var stravaVizHtml = "snippets/stravaViz-snippet.html"; 
   var extrasHtml = "snippets/extras-snippet.html";
   var t2Html = "snippets/t2-snippet.html";
 
@@ -144,6 +145,19 @@ $(function () {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       downloadHtml,
+      function (responseText) {
+        document.querySelector("#main-content")
+          .innerHTML = responseText;
+      },
+      false
+    );
+  };
+
+  // Load stravaViz view
+  dc.loadStravaViz = function () {
+    showLoading("#main-content");
+    $ajaxUtils.sendGetRequest(
+      stravaVizHtml,
       function (responseText) {
         document.querySelector("#main-content")
           .innerHTML = responseText;

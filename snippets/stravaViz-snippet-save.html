@@ -1,0 +1,60 @@
+  <link rel="stylesheet" href="../css/vizStyles.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="../js/vizPC.js"></script>
+  <!-- Container (dowload Section) -->
+  <div id="download" class="bg-1">
+    <div class="container">
+      <h3 class="text-center">Strava Visualizations</h3>
+      <p class="text-center">----------------<br/> under construction</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href='./resources/downloads/01-workflow.7z'>Worklow Textfile</a>
+          <span class="label label-danger">Neu</span></li>
+        <li class="list-group-item">xxxxxxxxxx<span class="badge">xxxxxxx</span></li> 
+        <li class="list-group-item">xxxxxxxxxx<span class="badge">xxx</span></li> 
+        <li class="list-group-item">xxxxxxxxxx <span class="badge">xxx</span></li> 
+      </ul>
+
+      <h3 class="text-center">Visualisierungen von Strava Daten</h3>  
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#menu0">Workflow</a></li>
+        <li><a data-toggle="tab" href="#menu1">xxxxxx</a></li>
+        <li><a data-toggle="tab" href="#menu2">xxxxxx</a></li>
+      </ul>
+
+      <div class="tab-content">
+
+        <div id="menu0" class="tab-pane fade in active">
+          <h2>Workflow</h2>
+          <p>Textdatei mit wichtigen Web-Links, browser-synch und git Commands zur 
+          Erstellung einer Webseite</p>
+        <!-- START INSERT -->
+        <p>Typ Auswahl: <select id="filterTest">
+          <option value="alle">ohne</option>
+          <option value="Brevet">ARA</option>
+          <option value="Event">Event</option>
+          <option value="Ride">Tour</option>
+          <option value="RTF">RTF</option>
+          <option value="Training">Training</option>
+        </select>
+        </p>
+
+        <div id="chart">
+          <canvas id="foreground"></canvas>
+          <svg></svg>
+        </div>
+
+        <!-- END INSERT -->          
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <h2>xxxxxxx</h2>
+          <p>aaaaaaaaaaaaa</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <h2>xxxxxxxxx</h2>
+          <p>xxxxxxxxxxxxx</p>
+        </div>
+
+      </div>
+    </div>  <!-- new end of container -->
+  </div>    <!-- download section end -->
